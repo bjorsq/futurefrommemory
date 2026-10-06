@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Future From Memory &ndash; Emma Kay</title>
+    <meta name="description"
+        content="The Future From Memory, an animated text piece by Emma Kay, rendered to video from the original Flash files. 269 paragraphs over 43 minutes.">
+    <style>
+        :root {
+            --text: #000;
+            --muted: #555;
+            --line: #ddd;
+            --panel: #f4f4f4;
+            --link: #000;
+            color-scheme: light;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--text);
+            font: 16px/1.5 Arial, "Liberation Sans", Arimo, Helvetica, sans-serif;
+        }
+
+        a {
+            color: var(--link);
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        video:focus-visible {
+            outline: 2px solid #000;
+            outline-offset: 3px;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        header {
+            padding: 64px 0 32px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            line-height: 1.1;
+            margin: 0 0 8px;
+            font-weight: normal;
+            letter-spacing: -0.01em;
+        }
+
+        .byline {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.125rem;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            .intro-text {
+                flex: 1;
+                max-width: 46em;
+                p {
+                    margin: 0 0 1em;
+                }
+            }
+            .intro-note {
+                flex: 1;
+            }
+        }
+        @media (min-width: 600px) {
+            .intro {
+                flex-direction: row;
+                gap: 32px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .intro p {
+                text-align: justify;
+                hyphens: auto;
+            }
+        }
+
+        .play-note {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin: 8px 0 0;
+        }
+
+        main {
+            padding: 48px 0 16px;
+            border-top: 1px solid var(--line);
+            margin-top: 48px;
+        }
+
+        /* the information, below the videos: its groups side by side, stacking on narrow screens */
+        aside {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+            gap: 24px 32px;
+            background: var(--panel);
+            padding: 20px;
+            margin: 0 0 48px;
+            font-size: 0.875rem;
+        }
+
+        aside h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 8px;
+            color: var(--muted);
+            font-weight: bold;
+        }
+
+        aside dl {
+            margin: 0;
+        }
+
+        aside dl div {
+            display: grid;
+            grid-template-columns: 9em 1fr;
+            gap: 8px;
+            padding: 4px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        aside dt {
+            color: var(--muted);
+        }
+
+        aside dd {
+            margin: 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        main h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0 0 16px;
+        }
+
+        /* one video in both formats: columns in the ratio 3:4 make the 4:3 and 16:9 players the same height */
+        .segment {
+            margin: 0 0 40px;
+        }
+
+        .segment-full {
+            margin-bottom: 56px;
+        }
+
+        .segment h3 {
+            font-size: 1.125rem;
+            margin: 0 0 2px;
+        }
+
+        .segment h3 .n {
+            display: inline-block;
+            min-width: 1.5em;
+            color: var(--muted);
+            font-weight: normal;
+        }
+
+        .segment .meta {
+            margin: 0 0 12px;
+            font-size: 0.875rem;
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .pair {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 700px) {
+            .pair {
+                grid-template-columns: 3fr 4fr;
+                gap: 24px;
+            }
+        }
+
+        .video {
+            margin: 0;
+        }
+
+        .video video {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border: 1px solid var(--line);
+        }
+
+        .video figcaption {
+            padding-top: 6px;
+            font-size: 0.875rem;
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 24px 0 48px;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding-top: 40px;
+            }
+
+            aside dl div {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <h1>The Future From Memory</h1>
+            <p class="byline">Emma Kay, nade with e-2</p>
+        </header>
+        <div class="intro">
+            <div class="intro-text">
+                <p>Emma Kay&rsquo;s work reconstructs epic histories, geographies and fictions entirely from memory. <em>The
+                        Future From Memory</em> turns the method forwards: a history of the world still to come, from the
+                    twenty-first century to the thirty-second and beyond, told in 269 paragraphs.</p>
+                <!-- TODO: where and when the piece was shown -->
+                <p>It was made in Macromedia Flash in five segments, each loading the next, and distributed on CD in
+                    2003 to run full-screen from a projector program on Mac and Windows. Flash Player is no longer
+                    supported anywhere, so in 2026 the original files were played back in Ruffle, an open-source
+                    Flash emulator, and rendered to video frame by frame.</p>
+                <p>Every video is here twice. The original piece had an aspect ratio of 4:3; the widescreen 16:9 version
+                    here removes the top quarter of the picture, which is blank in every frame, so no text is lost.</p>
+            </div>
+        </div>
+
+        <main>
+            <section class="segment segment-full" aria-labelledby="full">
+                <h2 id="full">The full piece</h2>
+                <p class="meta">43m 10s &middot; 64,753 frames</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/future-from-memory-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory, full version, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/future-from-memory-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 1.08 GB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/future-from-memory-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory, full version, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/future-from-memory-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 1.08 GB</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <h2>Segments</h2>
+            <p class="play-note" style="margin:-8px 0 24px">The piece in the five parts it was made in, each ending
+                where the original handed over to the next.</p>
+            <section class="segment" aria-labelledby="segment-1">
+                <h3 id="segment-1"><span class="n">1</span> Segment 1</h3>
+                <p class="meta">From 0:00:00 &middot; 9m 12s &middot; 61 paragraphs &middot; 5 headings &middot;
+                    13,789 frames &middot; rendered in 2m 13s</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-1-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory: segment 1, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/segment-1-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 209 MB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-1-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory: segment 1, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/segment-1-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 209 MB</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="segment" aria-labelledby="segment-2">
+                <h3 id="segment-2"><span class="n">2</span> Segment 2</h3>
+                <p class="meta">From 0:09:12 &middot; 7m 24s &middot; 54 paragraphs &middot; 4 headings &middot;
+                    11,112 frames &middot; rendered in 1m 48s</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-2-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory: segment 2, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/segment-2-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 207 MB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-2-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory: segment 2, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/segment-2-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 207 MB</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="segment" aria-labelledby="segment-3">
+                <h3 id="segment-3"><span class="n">3</span> Segment 3</h3>
+                <p class="meta">From 0:16:36 &middot; 7m 56s &middot; 45 paragraphs &middot; 4 headings &middot;
+                    11,904 frames &middot; rendered in 1m 55s</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-3-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory: segment 3, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/segment-3-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 193 MB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-3-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory: segment 3, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/segment-3-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 193 MB</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="segment" aria-labelledby="segment-4">
+                <h3 id="segment-4"><span class="n">4</span> Segment 4</h3>
+                <p class="meta">From 0:24:32 &middot; 8m 55s &middot; 54 paragraphs &middot; 8 headings &middot;
+                    13,387 frames &middot; rendered in 2m 11s</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-4-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory: segment 4, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/segment-4-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 238 MB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-4-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory: segment 4, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/segment-4-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 238 MB</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section class="segment" aria-labelledby="segment-5">
+                <h3 id="segment-5"><span class="n">5</span> Segment 5</h3>
+                <p class="meta">From 0:33:28 &middot; 9m 42s &middot; 55 paragraphs &middot; 9 headings &middot;
+                    14,561 frames &middot; rendered in 2m 22s</p>
+                <div class="pair">
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-5-4x3.png"
+                            width="1440" height="1080" aria-label="The Future From Memory: segment 5, 4:3">
+                            <source src="https://media.bjorsq.net/ffm/segment-5-4x3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>4:3 &middot; 1440 &times; 1080 &middot; 230 MB</figcaption>
+                    </figure>
+                    <figure class="video">
+                        <video controls preload="none" poster="https://media.bjorsq.net/ffm/segment-5-16x9.png"
+                            width="1440" height="810" aria-label="The Future From Memory: segment 5, 16:9">
+                            <source src="https://media.bjorsq.net/ffm/segment-5-16x9.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>16:9 &middot; 1440 &times; 810 &middot; 231 MB</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+        <aside aria-label="About the piece and the videos">
+
+            <section aria-labelledby="info-piece">
+                <h2 id="info-piece">The piece</h2>
+                <dl>
+                    <div>
+                        <dt>Running time</dt>
+                        <dd>43m 10s (0:43:10), looped</dd>
+                    </div>
+                    <div>
+                        <dt>Paragraphs</dt>
+                        <dd>269</dd>
+                    </div>
+                    <div>
+                        <dt>Headings</dt>
+                        <dd>30</dd>
+                    </div>
+                    <div>
+                        <dt>Segments</dt>
+                        <dd>5, from 7m 24s to 9m 42s long</dd>
+                    </div>
+                    <div>
+                        <dt>Each paragraph</dt>
+                        <dd>animated over 14 to 16.6 seconds (351 to 415 frames), most over 16 seconds; each is
+                            on screen for about 13 seconds</dd>
+                    </div>
+                    <div>
+                        <dt>Each heading</dt>
+                        <dd>4.4 to 9.7 seconds (110 to 242 frames)</dd>
+                    </div>
+                </dl>
+            </section>
+            <section aria-labelledby="info-original">
+                <h2 id="info-original">The original</h2>
+                <dl>
+                    <div>
+                        <dt>Format</dt>
+                        <dd>Macromedia Flash MX movies (SWF version 6), 800 &times; 600, 25 frames a second</dd>
+                    </div>
+                    <div>
+                        <dt>Files</dt>
+                        <dd>5 SWF files, 6.6 MB; each loaded the next, and the last loaded the first</dd>
+                    </div>
+                    <div>
+                        <dt>Text</dt>
+                        <dd>set in Flash and converted to vector outlines, so no fonts were needed to play it</dd>
+                    </div>
+                    <div>
+                        <dt>Playback</dt>
+                        <dd>full-screen with the mouse pointer hidden, from projector programs for Mac OS and
+                            Windows, or in Flash Player 6</dd>
+                    </div>
+                    <div>
+                        <dt>Distributed</dt>
+                        <dd>on CD, February 2003, with the source files and Flash Player 6 installers for Windows,
+                            Mac OS, Mac OS X and Linux</dd>
+                    </div>
+                    <div>
+                        <dt>Requirements</dt>
+                        <dd>85 MB of disk space, &ldquo;fast processor, graphics card and plenty of RAM&rdquo;</dd>
+                    </div>
+                </dl>
+            </section>
+            <section aria-labelledby="info-video">
+                <h2 id="info-video">The videos</h2>
+                <dl>
+                    <div>
+                        <dt>Resolution</dt>
+                        <dd>1440 &times; 1080 (4:3), or 1440 &times; 810 (16:9) with the blank top 270 pixels
+                            removed</dd>
+                    </div>
+                    <div>
+                        <dt>Frame rate</dt>
+                        <dd>25 frames a second, as the original</dd>
+                    </div>
+                    <div>
+                        <dt>Frames</dt>
+                        <dd>64,753</dd>
+                    </div>
+                    <div>
+                        <dt>Video</dt>
+                        <dd>H.264 (x264, preset slow, CRF 16, tuned for animation)</dd>
+                    </div>
+                    <div>
+                        <dt>Full version</dt>
+                        <dd>1.08 GB, 3.3 Mbit/s on average</dd>
+                    </div>
+                    <div>
+                        <dt>Rendered</dt>
+                        <dd>6 October 2026, in 10m 29s of rendering</dd>
+                    </div>
+                    <div>
+                        <dt>Render speed</dt>
+                        <dd>103 frames a second, at 1.8 times the original size</dd>
+                    </div>
+                    <div>
+                        <dt>Rendered with</dt>
+                        <dd>Ruffle&rsquo;s frame exporter, ffmpeg 7.1.5, on an AMD Ryzen 5 5500 with a Radeon (Navi 24)
+                            graphics card</dd>
+                    </div>
+                </dl>
+            </section>
+        </aside>
+        <footer>
+            <p><em>The Future From Memory</em> by Emma Kay. Videos made from the Flash files on the original CD.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
